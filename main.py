@@ -1,6 +1,6 @@
 from model.model.AddressBook import AddressBook
 from model.model.Record import Record
-from model.modules.parse_input import parse_input
+from modules.parse_input import parse_input
 
 
 def main():

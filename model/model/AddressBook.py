@@ -1,11 +1,11 @@
 from collections import UserDict
 from model.model.Record import Record
 from model.decorators.input_error import input_error
-from model.modules.birthdays import get_birthdays_per_week as birthdays
+from modules.birthdays import get_birthdays_per_week as birthdays
 
 class AddressBook(UserDict):
     def add_record(self, record:Record):
-        if self.data and self.find_record(record.name.value) != None:
+        if self.data and (record.name.value.lower() in self.data): # self.find_record(record.name.value) != None
             self.data[record.name.value.lower()].add_phone(record.phones[0].value)
         else:
             self.data[record.name.value.lower()] = record
